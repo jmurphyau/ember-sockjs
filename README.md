@@ -1,6 +1,28 @@
-# Ember SockJS Addon
+# Ember Addon for SockJS
 
 Adds SockJS to Ember.
+
+### Ember Object
+```js
+import SockJS from 'ember-sockjs/sockjs';
+
+var sock = SockJS.create({ url: 'http://mydomain.com/my_prefix' });
+
+sock.on('open', function() {
+  console.log('open');
+});
+
+sock.on('message', function(e) {
+  console.log('message', e.data);
+});
+
+sock.on('close', function() {
+  console.log('close');
+});
+
+sock.send('test');
+sock.close();
+```
 
 ### Raw Library
 
@@ -20,28 +42,6 @@ sock.onmessage = function(e) {
 sock.onclose = function() {
   console.log('close');
 };
-
-sock.send('test');
-sock.close();
-```
-
-### Ember Object
-```js
-import SockJS from 'ember-sockjs/sockjs';
-
-var sock = SockJS.create({ url: 'http://mydomain.com/my_prefix' });
-
-sock.on('open', function() {
-  console.log('open');
-});
-
-sock.on('message', function(e) {
-  console.log('message', e.data);
-});
-
-sock.on('close', function() {
-  console.log('close');
-});
 
 sock.send('test');
 sock.close();

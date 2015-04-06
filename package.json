@@ -1,7 +1,7 @@
 {
   "name": "ember-sockjs",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember Addon for SockJS",
   "directories": {
     "doc": "doc",
     "test": "tests"
